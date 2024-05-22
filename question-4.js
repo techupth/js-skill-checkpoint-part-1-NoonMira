@@ -4,4 +4,11 @@ const inventory = [
   { name: "Banana", price: 10, quantity: 50 },
   { name: "Orange", price: 30, quantity: 60 },
 ];
-// เริ่มเขียนโค้ดตรงนี้
+
+
+// let maxmin = inventory.reduce((acc,curr)=>{ Math.min(acc,curr)
+// });
+
+
+let maxmin = inventory.reduce((acc,curr)=>Math.min(acc.quantity,curr.quantity));
+console.log(Number(maxmin))

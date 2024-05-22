@@ -17,5 +17,19 @@ const products = [
   },
 ];
 
-const promotionCode = "";
-// เริ่มเขียนโค้ดตรงนี้
+const promotionCode = "10";
+
+function calculateTotalPrice (products,promotionCode){
+  if(promotionCode = "SALE20"){
+    return (20/100) * products;
+  }
+  else if (promotionCode = "SALE50"){
+    return (50/100) * products
+  }
+  else{
+      return "You don't have discount";
+  }
+
+}
+
+console.log(calculateTotalPrice (10,"SALE20"))
