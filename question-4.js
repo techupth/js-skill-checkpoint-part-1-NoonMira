@@ -6,9 +6,13 @@ const inventory = [
 ];
 
 
-// let maxmin = inventory.reduce((acc,curr)=>{ Math.min(acc,curr)
-// });
+let minFruitName= "";
+let minQuantity = inventory[0].quantity;
 
-
-let maxmin = inventory.reduce((acc,curr)=>Math.min(acc.quantity,curr.quantity));
-console.log(Number(maxmin))
+for (let fruit of inventory) {
+  if(fruit.quantity < minQuantity){
+    minFruitName = fruit.name ;
+    minQuantity = fruit.quantity;
+  }  
+}
+console.log(`สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ ${minFruitName}  ซึ่งมี ${minQuantity} ชิ้น`)

@@ -9,5 +9,5 @@ const myTodo = [
 
 myTodo.push({id:5,todo:"Walk the dog"})
 myTodo[3].todo = "Go to the gym";
-delete myTodo[4]
+myTodo.pop({id:5,todo:"Walk the dog"});
 console.log(myTodo)

@@ -17,19 +17,24 @@ const products = [
   },
 ];
 
-const promotionCode = "10";
+const promotionCode = "";
 
-function calculateTotalPrice (products,promotionCode){
-  if(promotionCode = "SALE20"){
-    return (20/100) * products;
-  }
-  else if (promotionCode = "SALE50"){
-    return (50/100) * products
-  }
-  else{
-      return "You don't have discount";
-  }
-
+function totalValue (acc,curr){
+  return acc+(curr.price*curr.quantity)
 }
 
-console.log(calculateTotalPrice (10,"SALE20"))
+function productsPromotion (products,promotionCode){
+let total = products.reduce(totalValue,0)
+  if(promotionCode === "SALE20"){
+    total = total-((20/100) * total);
+  }
+  else if (promotionCode === "SALE50"){
+    total = total- ((50/100) * total);
+  }
+  else{
+    console.log("You don't have discount");
+  }
+  return total
+}
+console.log(productsPromotion(products,promotionCode))
+
